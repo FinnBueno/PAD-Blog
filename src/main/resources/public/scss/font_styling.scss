@@ -1,0 +1,25 @@
+$font_dir: '../fonts/';
+$sans-serif: 'Sans-Serif';
+
+/* register-font('Chunkfive'); */
+@mixin register-font($name, $path)
+{
+    @font-face {
+        font-family: $name;
+        font-style: normal;
+        font-weight: normal;
+        src: $path;
+	}
+}
+
+/*
+prevent faux bold
+http://www.alistapart.com/articles/say-no-to-faux-bold/
+use-registered-font('Chunkfive');
+*/
+@mixin use-registered-font($name)
+{
+    font-family: $name, $sans-serif;
+    font-weight: normal;
+    letter-spacing: 0;
+}

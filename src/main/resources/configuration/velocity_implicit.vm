@@ -1,0 +1,6 @@
+#* @implicitly included *#
+#* @vtlvariable name="posts" type="java.lang.Iterable<me.donttalkto.padblog.blog.Post>" *#
+#* @vtlvariable name="post" type="me.donttalkto.padblog.blog.Post" *#
+#* @vtlvariable name="currentUser" type="me.donttalkto.padblog.blog.User" *#
+#* @vtlvariable name="contentInput" type="java.lang.String" *#
+#* @vtlvariable name="idInput" type="java.lang.String" *#

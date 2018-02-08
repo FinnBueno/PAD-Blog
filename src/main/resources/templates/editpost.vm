@@ -1,0 +1,31 @@
+<div class="col-sm-12" id="post-">
+    <div class="post">
+
+        <form onsubmit="return postForm()" action="editpost" method="POST">
+
+            <label for="inputsm">Title</label>
+            <input class="form-control input-lg" value="$titleInput" name="newTitle" id="inputsm" type="text">
+            <hr>
+
+            <label for="summernote">Content</label>
+            <textarea name="content" type="text" class="postContent" id="summernote">
+                $contentInput
+            </textarea>
+            <hr>
+
+            <script>
+                $('#summernote').summernote();
+            </script>
+
+            <input type="hidden" class="idInput" name="idInput" value="$idInput"></input>
+
+            <input id="save" class="btn btn-danger" type="submit" value="Save"/>
+            <script>
+                var postForm = function() {
+                    var content = $('textarea[name="content"]').html($('#summernote').code());
+                }
+            </script>
+        </form>
+
+    </div>
+</div>

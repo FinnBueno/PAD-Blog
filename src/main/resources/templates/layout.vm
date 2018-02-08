@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <link rel="stylesheet" href="scss/custom.min.css">
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.css" rel="stylesheet">
+
+    <!-- include summernote css/js -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.js"></script>
+    <script src="js/custom.js"></script>
+
+    <title>PAD BLE7 Blog</title>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="row">
+        <div class="col-sm-12">
+            <!-- NAVIGATION BAR -->
+            <nav class="navbar navbar-expand-sm navbar-light">
+
+                <div class="container-fluid">
+                    <!-- Website logo -->
+                    <a href="/" class="navbar-brand logo"><img class="logoImage" src="img/toad.png"></img>No-Name</a>
+
+                    <!-- Menu dropdown for small screens -->
+                    <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarMenu">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarMenu">
+                        <!--<ul class="nav navbar-nav ml-left">
+                            <li class="nav-item"><a class="nav-link" href="/">Feed</a></li>
+                            <li class="nav-item"><a class="nav-link" href="about">About</a></li>
+                        </ul>-->
+
+                        <ul class="nav navbar-nav ml-auto">
+                            #if($currentUser)
+                                <li class="nav-item"><a class="nav-link" href="logout"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                            #else
+                                <li class="nav-item"><a class="nav-link" href="register"><i class="fas fa-user"></i> Register</a></li>
+                                <li class="nav-item"><a class="nav-link" href="login"><i class="fas fa-sign-in-alt"></i> Login</a></li>
+                            #end
+                        </ul>
+                    </div>
+
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <div class="row">
+
+        #parse($template)
+
+    </div>
+
+</div>
+
+<div class="container-fluid">
+    <footer class="row">
+        <div class="container">
+            <div class="row" style="opacity: .65; font-weight: normal; color: black">
+
+                <div class="col-sm-8">
+                    <p><span style="margin-top: 5px">Team members:</span>
+                    <ul style="margin-top: -15px">
+                        <li >Hugo Zwaan</li>
+                        <li>Onur Bakan</li>
+                        <li>Mark Altorf</li>
+                        <li>Eline Boelhouwer</li>
+                        <li>Sten de Boer</li>
+                        <li>Finn Bon</li>
+                    </ul>
+                    </p>
+                    Author: <a style="opacity: .8; color:black" href="http://www.dont-talk-to.me">Finn Bon</a>
+                </div>
+
+                <div class="d-none d-sm-block col-sm-4">
+                    <h6>About this blog:</h6>
+                    <p>
+                        This is a blog for our group BLE7's PAD project. This blog will be updated twice a week, on tuesday and thursday. Don't bother trying to create an account, it won't be accepted unless you're a group member.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+</div>
+
+<script>
+    var list = document.getElementsByClassName('note-popover');
+    for (i = 0; i < list.length; i++)
+        list[i].style.display = 'none';
+</script>
+</body>
+
+</html>

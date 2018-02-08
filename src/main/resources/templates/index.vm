@@ -1,0 +1,36 @@
+#if($currentUser)
+<div class="col-sm-12">
+    <div class="post">
+        <form action="newpost" method="GET">
+            <input type="submit" class="btn btn-danger btn-block btn-lg" value="New post"></input>
+        </form>
+    </div>
+</div>
+#end
+
+#foreach($post in $posts)
+<div class="col-sm-12" id="post-$post.getID()">
+    <div class="post">
+        <form onsubmit="prepareEditElements($post.getID())" action="editpost" method="GET">
+            <h1 class="postTitle">$post.getTitle()</h1>
+            <hr>
+            <div class="postContent">
+                $post.getText()
+            </div>
+
+            <input type="hidden" class="idInput" name="idInput"></input>
+            <input type="hidden" class="titleInput" name="titleInput"></input>
+            <input type="hidden" class="contentInput" name="contentInput"></input>
+            #if($currentUser)
+                <hr>
+                    <div class="col-xs-12">
+                        <input type="submit" class="btn btn-danger" name="Edit" value="Edit"></input>
+                        <input type="submit" class="btn btn-danger" name="Remove" value="Remove">
+                    </div>
+            #end
+            <hr>
+        </form>
+        <p class="postCreationInfo ">Author: $post.getAuthor()<br>Date: $post.getDate()</p>
+    </div>
+</div>
+#end
