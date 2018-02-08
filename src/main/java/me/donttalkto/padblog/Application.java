@@ -9,7 +9,9 @@ public class Application {
     private Application() {
 
         staticFiles.location("/public");
-        staticFiles.expireTime(1000L);
+        staticFiles.expireTime(600L);
+
+        port(4567);
 
         // setting up routes
         setupRoutes();
