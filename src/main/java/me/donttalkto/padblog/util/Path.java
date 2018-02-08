@@ -102,9 +102,10 @@ public class Path {
                     req.queryParams("password"),
                     req.queryParams("repassword")
             );
-            if (result == null)
+            if (result == null) {
+                res.redirect("/login");
                 return map("/login");
-            else {
+            } else {
                 Map<String, Object> arguments = new HashMap<>();
                 arguments.put(result, true);
                 arguments.put("template", "templates/register.vm");
@@ -163,6 +164,7 @@ public class Path {
     }
 
     private static String map(String file) {
+        file = file.startsWith("/") ? file.substring(1) : file;
         Map<String, Object> arguments = new HashMap<>();
         arguments.put("template", "templates/" + file + ".vm");
         return render(arguments);
