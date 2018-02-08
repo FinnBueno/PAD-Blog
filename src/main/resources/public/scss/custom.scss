@@ -1,0 +1,157 @@
+$clr-1: #1A1A1D;
+$clr-2: #4E4E50;
+$clr-3: #6F2232;
+$clr-4: #950740;
+$clr-5: #C3073F;
+$clr-6: #ECECEC;
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 9999px, //992px,
+  xl: 9999px //1200px
+);
+
+// Should line should be IN BETWEEN the variables and the style rules
+@import "../../../../../staticWebsite/node_modules/bootstrap/scss/bootstrap";//"../../node_modules/bootstrap/scss/bootstrap";
+@import "../../../../../staticWebsite/scss/font_styling";
+
+@include register-font('Lemon/Milk', 'LemonMilk.otf');
+
+@function get-breakpoint($key: "xs") {
+  @return map-get($grid-breakpoints, $key);
+}
+
+// styling rules
+.navbar {
+  // background-color: rgba($primary-color, 1);
+  background-color: $clr-5;
+}
+
+.navbar-center {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    text-align: center;
+    margin:0 auto;
+}
+
+.navbar-toggler {
+  background-color: $clr-4;
+}
+
+.nav-link {
+  text-align: left;
+}
+
+@media (min-width: get-breakpoint("sm")) {
+  .nav-link {
+      text-align: center;
+  }
+}
+
+.nav-link.active {
+  // background: $secondary-color;
+  border-left: $clr-4 4px solid;
+  margin-left: -7px;
+  padding-left: 3px;
+}
+
+@media (min-width: get-breakpoint("sm")) {
+  .nav-link.active {
+    width: auto;
+    padding-bottom: 14.5px;
+    margin-bottom: -16px;
+    border-bottom: $clr-4 4px solid;
+    border-left: $clr-4 0px solid;
+    margin-left: 0px;
+    padding-left: 0px;
+  }
+}
+
+.logoImage {
+  height:43px;
+  margin-top: -15px;
+  margin-bottom:-10px;
+  margin-right: 10px;
+}
+
+.logo {
+  font-size: 23px;
+  @include use-registered-font('Lemon/Milk');
+}
+
+.btn-link {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: 100%;
+}
+
+a,
+.no-break {
+  white-space: nowrap;
+}
+
+.shadow {
+  box-shadow: 0 0 15px 0px black;
+}
+
+// body STYLING
+body {
+  background-color: $clr-1;
+}
+
+.post {
+  margin-top: 35px;
+  padding: 10px;
+  background-color: $clr-6;
+  overflow: hidden;
+  width: 100%;
+  border-top: $clr-5 5px solid;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.postHead {
+  color: $clr-4;
+  text-align: center;
+}
+
+.postBody {
+  img {
+    float: left;
+    margin: 6px 10px 5px 0;
+    width: 120px;
+  }
+  p {
+    text-align: justify;
+  }
+}
+
+.postCreationInfo {
+  font-size: 12px;
+}
+
+footer {
+  margin-top: 50px;
+  padding: 30px;
+  color: $clr-1;
+  font-weight: bold;
+  background-color: $clr-4;
+  a {
+    color: rgba(0, 0, 0, .5);
+    text-decoration: underline;
+  }
+}
+
+.btn {
+  background: $clr-4;
+  border-color: $clr-3;
+}
+
+.btn:hover {
+  background: $clr-5;
+}
